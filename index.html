@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Samuel - Chef & Barber | España</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@500&display=swap" rel="stylesheet">
+    <title>Samuel - Chef & Barber Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:ital,wght@0,700;1,400&family=Oswald:wght@500&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -21,252 +21,253 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            background-color: #121212;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 10px;
+            background-color: #000;
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh; padding: 10px;
         }
 
-        /* Contenedor Principal */
+        /* Contenedor Principal Responsive */
         .card {
-            width: 100%;
-            max-width: 420px;
-            background: var(--clean-white);
-            border-radius: 25px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6);
-            position: relative;
-            display: flex;
-            flex-direction: column;
+            width: 100%; max-width: 420px; background: var(--clean-white);
+            border-radius: 25px; overflow: hidden; position: relative;
+            display: flex; flex-direction: column; box-shadow: 0 25px 50px rgba(0,0,0,0.8);
         }
 
-        /* LOGO CIRCULAR */
-        .logo-container {
-            text-align: center;
-            padding: 15px;
-            background: white;
-            z-index: 10;
-        }
-        .logo-img {
-            width: 95px;
-            height: 95px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 3px solid var(--primary-gold);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-        }
-
-        /* IMAGEN DE FONDO (samu.jpeg) */
-        .hero-image {
-            width: 100%;
-            height: 380px;
+        /* CABECERA: IMAGEN TOTAL SIN ESPACIOS BLANCOS (Logo Corregido) */
+        .hero-section {
+            width: 100%; height: 400px; 
+            /* Se usa samu.jpeg como fondo total de la cabecera */
             background-image: url('samu.jpeg'); 
-            background-size: cover;
-            background-position: center;
-            position: relative;
+            background-size: cover; background-position: center top; 
+            position: relative; border-bottom: 5px solid var(--primary-gold);
         }
         .hero-overlay {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            padding: 30px 20px;
+            position: absolute; bottom: 0; width: 100%; padding: 30px 20px;
             background: linear-gradient(to top, rgba(0,0,0,1) 45%, transparent);
-            color: white;
-            text-align: center;
+            color: white; text-align: center;
         }
-        .hero-overlay p {
-            font-size: 0.85rem;
-            color: var(--primary-gold);
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin-bottom: 8px;
-        }
-        .hero-overlay h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
+        .hero-overlay p { font-size: 0.85rem; color: var(--primary-gold); font-weight: bold; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 5px; }
+        .hero-overlay h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0; text-shadow: 2px 2px 8px rgba(0,0,0,0.7); }
 
-        /* BOTONES INTERACTIVOS (4 BOTONES) */
-        .actions {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 12px;
-            padding: 20px;
-            background: white;
+        /* SELECTOR DE IDIOMAS CON BANDERAS (Muy Visible) */
+        .lang-selector {
+            display: flex; justify-content: center; gap: 15px;
+            padding: 15px; background: #eee; border-bottom: 1px solid #ddd;
         }
+        .lang-btn {
+            background: white; border: 2px solid #ccc; padding: 10px 18px;
+            border-radius: 25px; cursor: pointer; font-weight: bold;
+            display: flex; align-items: center; gap: 8px; font-size: 0.9rem;
+            transition: 0.3s ease;
+        }
+        .lang-btn.active { border-color: var(--primary-gold); background: #fffdf0; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .flag-icon { font-size: 1.2rem; }
+
+        /* CONTENIDO PRINCIPAL */
+        .content { padding: 0 20px 20px 20px; text-align: center; }
+
+        /* BOTONES DE ACCIÓN */
+        .grid-buttons { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; padding: 20px 0; }
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px;
-            border-radius: 12px;
-            text-decoration: none;
-            color: white;
-            font-size: 0.8rem;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex; align-items: center; justify-content: center;
+            padding: 15px; border-radius: 12px; text-decoration: none;
+            color: white; font-size: 0.85rem; font-weight: 700; transition: 0.3s ease;
+            text-align: center; text-transform: uppercase;
         }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 12px rgba(0,0,0,0.15); }
-        
+        .btn:active { transform: scale(0.95); }
         .btn-wsp { background: var(--whatsapp-green); }
         .btn-ig { background: var(--instagram-pink); }
         .btn-call { background: #333; }
         .btn-web { background: var(--primary-gold); }
 
-        /* PERFIL Y MOTIVACIÓN */
-        .profile-info { padding: 0 20px 20px; display: flex; flex-direction: column; gap: 15px; }
-        
+        /* SECCIONES DE TEXTO */
         .motivation-culinary {
-            background: var(--accent-gray);
-            padding: 20px;
-            border-left: 6px solid var(--primary-gold);
-            border-radius: 0 15px 15px 0;
+            background: var(--accent-gray); padding: 20px;
+            border-left: 6px solid var(--primary-gold); border-radius: 0 15px 15px 0;
+            text-align: left; margin-bottom: 15px;
         }
-        .motivation-culinary h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; margin-bottom: 5px; color: #222; }
-        .motivation-culinary p { font-size: 0.85rem; font-style: italic; color: #444; line-height: 1.5; }
+        .motivation-culinary h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 8px; color: #222; }
+        .motivation-culinary p { font-size: 0.9rem; font-style: italic; color: #444; line-height: 1.5; }
 
         .motivation-barber {
-            background: var(--barber-blue);
-            color: white;
-            padding: 18px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            gap: 15px;
+            background: var(--barber-blue); color: white; padding: 18px;
+            border-radius: 15px; display: flex; align-items: center; gap: 15px;
+            text-align: left; margin-bottom: 20px;
         }
         .motivation-barber h3 { font-family: 'Oswald', sans-serif; font-size: 1.1rem; letter-spacing: 1px; }
 
-        /* HORA Y UBICACIÓN */
-        .live-info {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.8rem;
-            color: #666;
-            background: #f9f9f9;
-            border-top: 1px solid #eee;
-        }
+        /* UBICACIÓN Y FECHA */
+        .live-info { text-align: center; padding: 15px; font-size: 0.8rem; color: #777; background: #fafafa; border-top: 1px solid #eee; }
         .live-info b { color: #333; }
 
-        /* FOOTER REQUERIDO */
+        /* FOOTER OBLIGATORIO */
         .footer {
-            background: var(--dark-black);
-            color: #777;
-            text-align: center;
-            padding: 20px;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.5;
+            background: #000; color: #777; text-align: center;
+            padding: 20px; font-size: 0.65rem; text-transform: uppercase;
+            letter-spacing: 1px; line-height: 1.5;
         }
         .footer span { color: var(--primary-gold); font-weight: bold; }
 
-        /* Bloqueo Suscripción */
+        /* Pantalla de Bloqueo Suscripción */
         #blocked {
-            display: none;
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: white; z-index: 10000;
-            flex-direction: column; justify-content: center; align-items: center;
-            text-align: center; padding: 20px;
+            display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: white; z-index: 10000; flex-direction: column; 
+            justify-content: center; align-items: center; text-align: center; padding: 20px;
         }
     </style>
 </head>
 <body>
 
     <div id="blocked">
-        <h1 style="color:#c62828; margin-bottom: 10px;">SUSCRIPCIÓN VENCIDA</h1>
-        <p style="font-size: 1.1rem; color: #555;">La licencia de esta tarjeta ha expirado.</p>
-        <p style="margin-top: 20px;">Contacte a: <b>Vibras Positivas</b></p>
-        <p style="font-weight: bold; font-size: 1.3rem;">311 770 0431</p>
+        <h1 style="color:#c62828; margin-bottom: 10px;">LICENCIA VENCIDA</h1>
+        <p style="font-size: 1.1rem; color: #555;">Suscripción expirada. Contacte al administrador.</p>
+        <p style="margin-top: 20px;">Vibras Positivas: <b>311 770 0431</b></p>
     </div>
 
     <div class="card" id="main-card">
-        <div class="logo-container">
-            <img src="samu.jpeg" class="logo-img" alt="Samuel Logo">
-        </div>
-
-        <div class="hero-image">
+        
+        <div class="hero-section">
             <div class="hero-overlay">
-                <p>Chef & Barber Master</p>
+                <p id="txt-subtitle">Chef & Barber Master</p>
                 <h1>SAMUEL</h1>
             </div>
         </div>
 
-        <div class="actions">
-            <a href="https://wa.me/34631239485?text=Hola%20Samuel,%20vi%20tu%20tarjeta%20digital." class="btn btn-wsp" target="_blank">WHATSAPP</a>
-            
-            <a href="https://www.instagram.com/samuelgonzalezagudelo/" class="btn btn-ig" target="_blank">INSTAGRAM</a>
-            
-            <a href="tel:+34631239485" class="btn btn-call">LLAMAR</a>
-            
-            <a href="#" class="btn btn-web">APP WEB</a>
+        <div class="lang-selector">
+            <div class="lang-btn active" id="btn-es" onclick="setLang('es')">
+                <span class="flag-icon">🇪🇸</span> ESPAÑOL
+            </div>
+            <div class="lang-btn" id="btn-en" onclick="setLang('en')">
+                <span class="flag-icon">🇺🇸</span> ENGLISH
+            </div>
         </div>
 
-        <div class="profile-info">
+        <div class="content">
+            <div class="grid-buttons">
+                <a href="https://wa.me/34631239485" class="btn btn-wsp">WhatsApp</a>
+                <a href="https://www.instagram.com/samuelgonzalezagudelo/" class="btn btn-ig" target="_blank">Instagram</a>
+                <a href="tel:+34631239485" class="btn btn-call" id="btn-call">LLAMAR</a>
+                <a href="#" class="btn btn-web" id="btn-web">APP WEB</a>
+            </div>
+
             <div class="motivation-culinary">
-                <h3>El Arte de Samuel</h3>
-                <p>"Siguiendo los pasos del Chef Mauricio Marín, Samuel combina la técnica impecable con la pasión del artista. Un plato es un destino."</p>
+                <h3 id="txt-chef-title">El Arte de Samuel</h3>
+                <p id="txt-chef-desc">"Samuel combina la técnica impecable inspirada en Mauricio Marín con la pasión de un artista. Cada plato es un destino."</p>
             </div>
 
             <div class="motivation-barber">
                 <span style="font-size: 30px;">💈</span>
                 <div>
-                    <h3>Barbería de Autor</h3>
-                    <p style="font-size: 0.85rem; opacity: 0.9;">Precisión en España. Cada corte cuenta una historia.</p>
+                    <h3 id="txt-barber-title">Barbería de Autor</h3>
+                    <p id="txt-barber-desc" style="font-size: 0.85rem; opacity: 0.9;">Estilo urbano y cortes de alta precisión en España.</p>
                 </div>
             </div>
+
         </div>
 
         <div class="live-info">
-            <p style="margin-bottom: 5px;">📍 Ubicación: <b>ESPAÑA</b></p>
+            <p style="margin-bottom: 5px;"><span id="txt-loc">Ubicación</span>: <b>ESPAÑA</b></p>
             <p id="clock">Cargando hora local...</p>
         </div>
 
         <footer class="footer">
-            app desarrollada por <span>vibras positivas (3117700431)</span><br>
-            derechos de autor &copy; 2026 | Colombia - España
+            <span id="txt-footer">app desarrollada por</span> <span>vibras positivas (3117700431)</span><br>
+            © 2026 | ALL RIGHTS RESERVED
         </footer>
     </div>
 
     <script>
-        // --- CONTROL DE SUSCRIPCIÓN ---
-        const VENCIMIENTO = "2027-03-28"; 
+        let currentLang = 'es';
 
-        function validarAcceso() {
+        // Diccionario de textos bilingües
+        const content = {
+            es: {
+                subtitle: "Chef & Barber Master",
+                call: "LLAMAR",
+                web: "APP WEB",
+                chefTitle: "El Arte de Samuel",
+                chefDesc: '"Samuel combina la técnica impecable inspirada en Mauricio Marín con la pasión de un artista. Cada plato es un destino."',
+                barberTitle: "Barbería de Autor",
+                barberDesc: "Estilo urbano y cortes de alta precisión en España.",
+                loc: "Ubicación",
+                footer: "app desarrollada por",
+                clockPre: "España: "
+            },
+            en: {
+                subtitle: "Master Chef & Barber",
+                call: "CALL NOW",
+                web: "WEB APP",
+                chefTitle: "Samuel's Art",
+                chefDesc: '"Samuel combines flawless technique inspired by Mauricio Marín with an artist\'s passion. Every dish is a destination."',
+                barberTitle: "Signature Barbering",
+                barberDesc: "Urban style and high-precision cuts in Spain.",
+                loc: "Location",
+                footer: "app developed by",
+                clockPre: "Spain: "
+            }
+        };
+
+        // Función para cambiar de idioma
+        function setLang(lang) {
+            currentLang = lang;
+            
+            // Actualizar estado de los botones
+            document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            // Actualizar textos
+            document.getElementById('txt-subtitle').innerText = content[lang].subtitle;
+            document.getElementById('btn-call').innerText = content[lang].call;
+            document.getElementById('btn-web').innerText = content[lang].web;
+            document.getElementById('txt-chef-title').innerText = content[lang].chefTitle;
+            document.getElementById('txt-chef-desc').innerText = content[lang].chefDesc;
+            document.getElementById('txt-barber-title').innerText = content[lang].barberTitle;
+            document.getElementById('txt-barber-desc').innerText = content[lang].barberDesc;
+            document.getElementById('txt-loc').innerText = content[lang].loc;
+            document.getElementById('txt-footer').innerText = content[lang].footer;
+            
+            // Forzar actualización del reloj para cambiar el prefijo del idioma
+            updateClock();
+        }
+
+        // --- HORA REAL ESPAÑA (UTC+1/+2) ---
+        function updateClock() {
+            const now = new Date();
+            const options = { 
+                timeZone: 'Europe/Madrid', 
+                weekday: 'long', 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: true
+            };
+            // Usar 'es-ES' para español y 'en-US' para inglés en el formato de fecha
+            const langCode = currentLang === 'es' ? 'es-ES' : 'en-US';
+            const formatter = new Intl.DateTimeFormat(langCode, options);
+            const prefix = content[currentLang].clockPre;
+            document.getElementById('clock').innerText = prefix + formatter.format(now);
+        }
+
+        // --- CONTROL INVISIBLE DE SUSCRIPCIÓN ---
+        // Cambia esta fecha para activar/desactivar la tarjeta (Formato AAAA-MM-DD)
+        const FECHA_VENCIMIENTO = "2027-03-28"; 
+
+        function validarSuscripcion() {
             const hoy = new Date();
-            const limite = new Date(VENCIMIENTO);
-            if (hoy > limite) {
+            const vencimiento = new Date(FECHA_VENCIMIENTO);
+            if (hoy > vencimiento) {
                 document.getElementById('main-card').style.display = 'none';
                 document.getElementById('blocked').style.display = 'flex';
             }
         }
 
-        // --- HORA REAL ESPAÑA ---
-        function updateClock() {
-            const options = { 
-                timeZone: 'Europe/Madrid', 
-                hour: '2-digit', 
-                minute: '2-digit', 
-                second: '2-digit', 
-                hour12: true, 
-                weekday: 'long', 
-                day: 'numeric', 
-                month: 'long' 
-            };
-            const formatter = new Intl.DateTimeFormat('es-ES', options);
-            document.getElementById('clock').innerText = "España: " + formatter.format(new Date());
-        }
-
-        validarAcceso();
-        setInterval(updateClock, 1000);
-        updateClock();
+        // Inicialización
+        validarSuscripcion(); // Primero verifica suscripción
+        setInterval(updateClock, 1000); // Actualiza el reloj cada segundo
+        updateClock(); // Muestra el reloj inicial
     </script>
 </body>
 </html>
